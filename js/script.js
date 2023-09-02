@@ -40,7 +40,8 @@ const handleLoadVideo = async (categoryId = 1000) => {
           <div class="card bg-base-100 shadow-sm ">
             <div class="relative">
               <img class="w-full h-40 rounded-md" src="${video.thumbnail}" />
-              <span class="absolute bottom-0 right-0 bg-[#171717]  w-32 text-center text-[12px] text-white mb-1 mr-1 rounded-md">${video.others.posted_date ? postdate(video.others.posted_date) : ''}</span>
+              ${video.others.posted_date ? `<span class="absolute bottom-0 right-0 bg-[#171717] p-1 text-center text-[12px] text-white mb-1 mr-1 rounded-md">${postdate(video.others.posted_date)}</span>` : ''}
+              
             </div>
 
       
@@ -62,7 +63,7 @@ const handleLoadVideo = async (categoryId = 1000) => {
       cardContainer.appendChild(div);
 
       function postdate(seconds) {
-        const days = Math.floor(seconds / 86400); // 86400 seconds in a day
+        const days = Math.floor(seconds / 86400); // 
         const hours = Math.floor((seconds % 86400) / 3600);
         const minutes = Math.floor((seconds % 3600) / 60);
 
@@ -80,7 +81,7 @@ const handleLoadVideo = async (categoryId = 1000) => {
           result += `${minutes}min`;
         }
 
-        return result.trim(); // Remove trailing space
+        return result.trim(); 
       }
 
 
