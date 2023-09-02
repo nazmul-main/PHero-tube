@@ -53,7 +53,7 @@ const handleLoadVideo = async (categoryId = 1000) => {
                           <h3 class="text-md font-bold mt-2">${video.title}</h3>
                       <div class=" flex gap-2 justify-start items-center">
                             <h4 class="mt-2">${video.authors[0]?.profile_name}</h4>
-                            <img class="w-4 h-4 rounded-full mt-2" src="${video.authors[0]?.verified ? 'images/varify.png' : 'hidden'}">
+                            <p class="w-4 h-4 rounded-full mt-2" > ${video.authors[0]?.verified  ? '<img src="images/varify.png"> ' : ''}</p>
                       </div>
                         <h4 class="mt-2">${video.others.views ? video.others.views : 'no views'} Views</h4>
                       </div>
