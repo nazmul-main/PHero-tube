@@ -38,10 +38,10 @@ const handleLoadVideo = async (categoryId = 1000) => {
       const div = document.createElement('div');
       div.innerHTML = `
           <div class="card bg-base-100 shadow-sm ">
-            <figure class="relative">
-              <img class="w-full h-40 rounded-t-md" src="${video.thumbnail}" />
+            <div class="relative">
+              <img class="w-full h-40 rounded-md" src="${video.thumbnail}" />
               <span class="absolute bottom-0 right-0 bg-[#171717]  w-32 text-center text-[12px] text-white mb-1 mr-1 rounded-md">${video.others.posted_date ? postdate(video.others.posted_date) : ''}</span>
-            </figure>
+            </div>
 
       
           
