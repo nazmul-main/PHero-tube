@@ -15,7 +15,7 @@ const handleCategory = async () => {
   tubeCetagory.forEach((category) => {
     const div = document.createElement('div')
     div.innerHTML = `
-          <a onclick="handleLoadVideo('${category.category_id}')" class="tab bg-[#25252533] px-4 py-1 rounded-sm text-md font-semibold">${category.category}</a>
+          <a onclick="handleLoadVideo('${category.category_id}')" class="tab bg-[#25252533] px-2 md:px-6 py-1 rounded-sm text-md font-semibold">${category.category}</a>
           `
     tabContainer.appendChild(div)
 
