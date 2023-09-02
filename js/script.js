@@ -40,7 +40,7 @@ const handleLoadVideo = async (categoryId = 1000) => {
           <div class="card bg-base-100 shadow-sm ">
             <div class="relative">
               <img class="w-full h-40 rounded-md" src="${video.thumbnail}" />
-              ${video.others.posted_date ? `<span class="absolute bottom-0 right-0 bg-[#171717] p-1 text-center text-[12px] text-white mb-1 mr-1 rounded-md">${postDate(video.others.posted_date)}</span>` : ''}
+              ${video.others.posted_date ? `<span class="absolute bottom-0 right-0 bg-[#171717] p-1 text-center text-[12px] text-white mb-1 mr-1 rounded-md">${postDate(video.others.posted_date)} ago </span>` : ''}
               
             </div>
 
