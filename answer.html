@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PH Blog </title>
+    <link rel="shortcut icon" href="images/varify.png" type="image/x-icon">
+    <!-- daisy -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <style>
+
+
+    </style>
+</head>
+
+<body class="w-full mx-auto bg-[#4b534c]">
+
+
+    <!-- Discuss the scope of var, let, and const
+    Tell us the use cases of null and undefined
+    What do you mean by REST API? -->
+        
+    <div
+        class="answer flex flex-col gap-4 justify-center items-center h-screen px-4  md:px-8 lg:px-20  text-white">
+        <div>
+            <h3 class="text-center my-auto text-4xl font-semibold text-white ">Blog Questions & Answer</h3><hr class="border-2 border-red-500 mt-2">
+        </div>
+        <div class="collapse collapse-arrow bg-base-200 mx-4">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium bg-[#E64758]">
+                Q. Discuss the scope of var, let, and const
+            </div>
+            <div class="collapse-content  bg-[#323232]">
+                <p class="ml-6 my-3 text-[20px]">Ans :  
+                    <br> ---  `var` has function-level scope, which means it is accessible throughout the function in which it is declared and can also be hoisted, potentially leading to unexpected behavior.
+                    <br>---- `let` and `const` have block-level scope, restricting their accessibility to the block in which they are defined, providing better control and predictability, and they are not hoisted. 
+                    <br>--- `let` allows reassignment, while `const` does not..</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium bg-[#E64758]">
+                Q. Tell us the use cases of null and undefined
+            </div>
+            <div class="collapse-content bg-[#323232]">
+                <p class="ml-6 my-3 text-[20px]">Ans : 
+                    <br>--- nulll is explicitly set by developers to represent the intentional absence of a value, often used when a variable or object property should have no value or to reset a variable's value. 
+                    <br>--- undefined typically indicates that a variable or object property hasn't been assigned a value yet, and it's also the default value of function parameters that weren't provided when the function was called.</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium bg-[#E64758]">
+                Q. What do you mean by REST API?
+            </div>
+            <div class="collapse-content bg-[#323232]">
+                <p class="ml-6 my-3 text-[20px]">Ans 
+                    <br> --- REST (Representational State Transfer) API is an architectural style for designing networked applications. It uses HTTP methods like GET, POST, PUT, DELETE to interact with resources (data) through a stateless communication protocol. REST APIs enable clients (e.g., web applications) to request and manipulate data resources from a server in a standardized and scalable manner. They follow principles of simplicity, statelessness, and a uniform interface for easy integration and communication between different software systems.</p>
+            </div>
+        </div>
+    </div>
+        
+
+
+
+    <!-- Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
