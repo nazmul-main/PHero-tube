@@ -40,16 +40,18 @@ const handleLoadVideo = async (categoryId = 1000) => {
           <div class="card bg-base-100 shadow-sm ">
             <div class="relative">
               <img class="w-full h-40 rounded-md" src="${video.thumbnail}" />
-              ${video.others.posted_date ? `<span class="absolute bottom-0 right-0 bg-[#171717] p-1 text-center text-[12px] text-white mb-1 mr-1 rounded-md">${postdate(video.others.posted_date)}</span>` : ''}
+              ${video.others.posted_date ? `<span class="absolute bottom-0 right-0 bg-[#171717] p-1 text-center text-[12px] text-white mb-1 mr-1 rounded-md">${postDate(video.others.posted_date)}</span>` : ''}
               
             </div>
 
       
           
           <div class="flex items-start gap-4 mt-4 p-2">
-                      <img class=" mt-2 w-10 h-10 rounded-full"
-                        src="${video.authors[0]?.profile_picture}"
-                        alt="Shoes" />
+                      <div class="avatar">
+                        <div class=" w-10  mt-2 rounded-full">
+                        <img class="" src="${video.authors[0]?.profile_picture}"/>
+                        </div>
+                      </div>
                       <div class="">
                           <h3 class="text-md font-bold mt-2">${video.title}</h3>
                       <div class=" flex gap-2 justify-start items-center">
@@ -62,27 +64,38 @@ const handleLoadVideo = async (categoryId = 1000) => {
           `;
       cardContainer.appendChild(div);
 
-      function postdate(seconds) {
-        const days = Math.floor(seconds / 86400); // 
-        const hours = Math.floor((seconds % 86400) / 3600);
-        const minutes = Math.floor((seconds % 3600) / 60);
-
+      function postDate(seconds) {
+        const secondsInMinute = 60;
+        const secondsInHour = 3600;
+        const secondsInDay = 86400;
+        const secondsInYear = 31536000;
+    
+        const years = Math.floor(seconds / secondsInYear);
+        const days = Math.floor((seconds % secondsInYear) / secondsInDay);
+        const hours = Math.floor((seconds % secondsInDay) / secondsInHour);
+        const minutes = Math.floor((seconds % secondsInHour) / secondsInMinute);
+    
         let result = '';
-
+    
+        if (years > 0) {
+            result += `${years} year `;
+        }
         if (days > 0) {
-          result += `${days}day `;
+            result += `${days} day `;
         }
-
+    
         if (hours > 0) {
-          result += `${hours}hrs `;
+            result += `${hours} hrs `;
         }
-
+    
         if (minutes > 0) {
-          result += `${minutes}min`;
+            result += `${minutes} min`;
         }
+    
+        return result.trim();
+    }
 
-        return result.trim(); 
-      }
+    
 
 
     });
