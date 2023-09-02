@@ -9,7 +9,7 @@ document.getElementById("openButton").addEventListener("click", function() {
       const res = await fetch('https://openapi.programming-hero.com/api/videos/categories')
       const data = await res.json()
       const tubeCetagory = data.data;
-      // console.log(tubeCetagory);
+    //   console.log(tubeCetagory);
   
       const tabContainer = document.getElementById('tap-container')
       tubeCetagory.forEach((category) => {
@@ -27,12 +27,13 @@ document.getElementById("openButton").addEventListener("click", function() {
     const data = await res.json();
     const videoData = data?.data;
     // console.log(videoData);
-  
+    const errorComtainer = document.getElementById('error-container');
+        errorComtainer.innerHTML = ''
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
     
   
-    if (videoData && videoData.length > 0) {
+    if ( videoData.length > 0) {
         videoData.forEach((video) => {
             const div = document.createElement('div');
             div.classList = ` card  card-compact  h-80 bg-base-100 shadow-sm `;
@@ -84,11 +85,11 @@ document.getElementById("openButton").addEventListener("click", function() {
             
             
         });
-        
-    } else {
         const errorComtainer = document.getElementById('error-container');
+        errorComtainer.innerHTML = ''
+    } else {
+        
         errorComtainer.innerHTML = `
-      
       <div class="flex justify-center items-center mt-24">
         <div class="mx-auto  text-center">
           <img class="mx-auto" src="./images/icon.png" alt="Icon">
@@ -98,7 +99,7 @@ document.getElementById("openButton").addEventListener("click", function() {
       `;
       
     }
-   
+    
   };
   
   
